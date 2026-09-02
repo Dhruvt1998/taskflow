@@ -41,7 +41,7 @@ export async function changeTaskStatus(
         throw new Error("Task not found");
     }
     const updatedTask = {...task,status};
-    tasks = tasks.map(createTask => createTask.id === id ? updatedTask : createTask);
+    tasks = tasks.map(task => task.id === id ? updatedTask : task);
     return updatedTask;
 }
 
